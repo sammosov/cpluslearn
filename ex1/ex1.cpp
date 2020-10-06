@@ -1,10 +1,10 @@
+// Dont forget to cl /EHcs ex1.cpp  to avoid varnings 
 #include <iostream>
 
 int main()
 {
     // Print welcome message to the terminal
-    std::cout << "You are a secret agent breaking into a secure server room...";
-    std::cout << std::endl;
+    std::cout << "You are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...";
     
     // declare a three digit code
@@ -20,19 +20,16 @@ int main()
     int GuessThree = NULL;
 
     // Print sum and product to the terminal
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "There are three digits in the code" << std::endl;
-    std::cout << "The coded add up to: " << NumbersSum << std::endl;
-    std::cout << "The codes multiply to give: " << NumbersProduct << std::endl;
-    std::cout << std::endl;
-
-    //Asking player to guess
-
-    std::cin >> GuessOne >> GuessTwo >> GuessThree;
-    std::cout << "You`ve just entered: " << GuessOne << GuessTwo << GuessThree;
-    std::cout << std::endl;
+    std::cout << "\n\n";
+    std::cout << "There are three digits in the code\n";
+    std::cout << "The coded add up to: " << NumbersSum << "\n";
+    std::cout << "The codes multiply to give: " << NumbersProduct << "\n";
     
+    //Asking player to guess
+    std::cout << "Enter your choise of digits: \n";
+    std::cin >> GuessOne >> GuessTwo >> GuessThree;
+    std::cout << "You`ve just entered: " << GuessOne << GuessTwo << GuessThree << "\n";
+        
     //Declare the variable for storing sum and product using player guesses
     int GuessSum = GuessOne + GuessTwo + GuessThree;
     int GuessProduct = GuessOne * GuessTwo * GuessThree;
@@ -51,10 +48,8 @@ int main()
     }
 
     // Sending sum and product based on guesses back to console
-    std::cout << "Sum is: " << GuessSum;
-    std::cout << std::endl;
-    std::cout << "Product is: " << GuessProduct;
-    std::cout << std::endl;
-
+    std::cout << "Sum is: " << GuessSum << "\n"; 
+    std::cout << "Product is: " << GuessProduct << "\n";
+    
     return 0;
 }
