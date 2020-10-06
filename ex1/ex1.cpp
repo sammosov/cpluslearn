@@ -1,9 +1,9 @@
 // Dont forget to cl /EHcs ex1.cpp  to avoid varnings 
 #include <iostream>
 
-int main()
+void PlayGame()
 {
-    // Print welcome message to the terminal
+// Print welcome message to the terminal
     std::cout << "You are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...";
     
@@ -44,12 +44,17 @@ int main()
     else 
     {
 
-        std::cout << "Wrong numbers this time!!!";
+        std::cout << "Wrong numbers this time!!!\n";
     }
 
     // Sending sum and product based on guesses back to console
     std::cout << "Sum is: " << GuessSum << "\n"; 
     std::cout << "Product is: " << GuessProduct << "\n";
-    
-    return 0;
+        
+
+}
+int main()
+{
+    PlayGame();
+    return 0;    
 }
