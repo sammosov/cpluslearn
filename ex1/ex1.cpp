@@ -1,10 +1,22 @@
 // Dont forget to cl /EHcs ex1.cpp  to avoid varnings 
 #include <iostream>
 
-void PlayGame()
+void PrintIntro()
 {
+    std::cout << "===============================\n";
+    std::cout << "=                             =\n";
+    std::cout << "=    -----The-----            =\n";
+    std::cout << "=      -----Cooolest-----     =\n";
+    std::cout << "=         -----Intro-----     =\n";
+    std::cout << "===============================\n";
+
+}
+
+bool PlayGame()
+{
+    PrintIntro();
 // Print welcome message to the terminal
-    std::cout << "You are a secret agent breaking into a secure server room...\n";
+    std::cout << "\nYou are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...";
     
     // declare a three digit code
@@ -38,6 +50,7 @@ void PlayGame()
     if (GuessSum == NumbersSum && GuessProduct == NumbersProduct)
     {
         std::cout << "You win!!!";
+        return true;
 
     }
 
@@ -45,6 +58,7 @@ void PlayGame()
     {
 
         std::cout << "Wrong numbers this time!!!\n";
+        return false;
     }
 
     // Sending sum and product based on guesses back to console
@@ -55,6 +69,17 @@ void PlayGame()
 }
 int main()
 {
-    PlayGame();
+    while(true)
+    {
+        bool bLevelComplete=PlayGame();
+        std::cin.clear();
+        std::cin.ignore();
+
+        if (bLevelComplete)
+        {
+            // increase the level difficulty
+        }
+        
+    }
     return 0;    
 }
