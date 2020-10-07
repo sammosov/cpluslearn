@@ -1,5 +1,6 @@
 // Dont forget to cl /EHcs ex1.cpp  to avoid varnings 
 #include <iostream>
+#include <ctime>
 
 void PrintIntro(int Difficulty)
 {
@@ -13,17 +14,17 @@ void PrintIntro(int Difficulty)
 
 }
 
-bool PlayGame()
+bool PlayGame(int Difficulty)
 {
-    PrintIntro(7);
+    PrintIntro(Difficulty);
 // Print welcome message to the terminal
     std::cout << "\nYou are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...";
     
     // declare a three digit code
-    const int FirstDigit = 4;
-    const int SecondDigit = 3;
-    const int ThirdDigit = 15;
+    const int FirstDigit = rand() % Difficulty + Difficulty;
+    const int SecondDigit = rand() % Difficulty + Difficulty;
+    const int ThirdDigit = rand() % Difficulty + Difficulty;
  
     const int NumbersSum = FirstDigit + SecondDigit + ThirdDigit;
     const int NumbersProduct = FirstDigit * SecondDigit * ThirdDigit;
@@ -70,10 +71,13 @@ bool PlayGame()
 }
 int main()
 {
+    srand(time(NULL));
+    const int MaxLevel = 5;
     int LevelDifficulty = 1;
-    while(true)
+
+    while (LevelDifficulty <= MaxLevel) //Loop the game untill levels are completed. 
     {
-        bool bLevelComplete=PlayGame();
+        bool bLevelComplete=PlayGame(LevelDifficulty);
         std::cin.clear();
         std::cin.ignore();
 
