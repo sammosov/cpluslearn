@@ -1,7 +1,7 @@
 // Dont forget to cl /EHcs ex1.cpp  to avoid varnings 
 #include <iostream>
 
-void PrintIntro()
+void PrintIntro(int Difficulty)
 {
     std::cout << "===============================\n";
     std::cout << "=                             =\n";
@@ -9,12 +9,13 @@ void PrintIntro()
     std::cout << "=      -----Cooolest-----     =\n";
     std::cout << "=         -----Intro-----     =\n";
     std::cout << "===============================\n";
+    std::cout << "============LEVEL " << Difficulty <<"============\n";
 
 }
 
 bool PlayGame()
 {
-    PrintIntro();
+    PrintIntro(7);
 // Print welcome message to the terminal
     std::cout << "\nYou are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...";
@@ -69,6 +70,7 @@ bool PlayGame()
 }
 int main()
 {
+    int LevelDifficulty = 1;
     while(true)
     {
         bool bLevelComplete=PlayGame();
@@ -77,7 +79,7 @@ int main()
 
         if (bLevelComplete)
         {
-            // increase the level difficulty
+            ++LevelDifficulty;
         }
         
     }
